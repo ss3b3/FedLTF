@@ -1,0 +1,20 @@
+python main.py --dataset cifar10 \
+    --partition iid \
+    --balance \
+    --num_clients 10 \
+    --noise_type sym \
+    --noise_ratio 0.7 \
+    --seed 1 \
+    --model resnet18 \
+    --batch_size 512 \
+    --SSL_method byol \
+    --algorithm FedLTF \
+    --encoder_network resnet18 \
+    --linear_stage_epochs 20 \
+    --finetune_stage_epochs 50 \
+    --linear_stage_lr 0.1 \
+    --finetune_stage_lr 1e-3 \
+    --classifier_stage_local_epochs 5 \
+    --kl_s 1 \
+    --encoder_model_path ./Results/FedSSL_cifar10_federated_global/resnet18_10_iid_balanced_sym_0.3_lr0.032_bs128_ep5_lossce_test_FedSSL_byol_resnet18/model/ssl_model.pth \
+    --goal test_cifar10_sym_0.7
